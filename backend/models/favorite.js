@@ -1,37 +1,30 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-// Definición del esquema de Favorito
-const favoriteSchema = new mongoose.Schema({
-  eventId: {
-    type: String,
-    required: [true, 'El ID del evento es obligatorio']
+const favoriteSchema = new mongoose.Schema(
+  {
+    factId: {
+      type: String,
+      required: [true, "El ID del cat fact es obligatorio"],
+    },
+    text: {
+      type: String,
+      required: [true, "El texto del cat fact es obligatorio"],
+    },
+    type: {
+      type: String,
+      default: "cat",
+    },
+    owner: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
   },
-  title: {
-    type: String,
-    required: [true, 'El título del evento es obligatorio']
-  },
-  date: {
-    type: String,
-    required: [true, 'La fecha del evento es obligatoria']
-  },
-  venue: {
-    type: String,
-    required: [true, 'El lugar del evento es obligatorio']
-  },
-  image: {
-    type: String,
-    default: ''
-  },
-  owner: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User', // Referencia al modelo User
-    required: true
+  {
+    timestamps: true,
   }
-}, {
-  timestamps: true
-});
+);
 
-// Índice compuesto para evitar duplicados: mismo usuario + mismo evento
-favoriteSchema.index({ owner: 1, eventId: 1 }, { unique: true });
+favoriteSchema.index({ owner: 1, factId: 1 }, { unique: true });
 
-module.exports = mongoose.model('Favorite', favoriteSchema);
+module.exports = mongoose.model("Favorite", favoriteSchema);

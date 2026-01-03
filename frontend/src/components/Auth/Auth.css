@@ -1,16 +1,16 @@
-/* Componente Auth - Metodología BEM */
-
-/* Bloque: auth */
 .auth {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-image: url("https://images.unsplash.com/photo-1596854307943-279e29c90c14?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   padding: 20px;
+  position: relative;
 }
-
-/* Elemento: auth__container */
 .auth__container {
   background: white;
   border-radius: 12px;
@@ -20,7 +20,6 @@
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* Elemento: auth__title */
 .auth__title {
   font-size: 28px;
   font-weight: 700;
@@ -29,7 +28,6 @@
   text-align: center;
 }
 
-/* Elemento: auth__error */
 .auth__error {
   background-color: #fee;
   color: #c33;
@@ -40,28 +38,24 @@
   border: 1px solid #fcc;
 }
 
-/* Elemento: auth__form */
 .auth__form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* Elemento: auth__form-group */
 .auth__form-group {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-/* Elemento: auth__label */
 .auth__label {
   font-size: 14px;
   font-weight: 600;
   color: #555;
 }
 
-/* Elemento: auth__input */
 .auth__input {
   padding: 12px 16px;
   border: 2px solid #e0e0e0;
@@ -81,7 +75,6 @@
   color: #aaa;
 }
 
-/* Elemento: auth__button */
 .auth__button {
   padding: 14px 24px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -104,14 +97,12 @@
   transform: translateY(0);
 }
 
-/* Modificador: auth__button--disabled */
 .auth__button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
   transform: none;
 }
 
-/* Elemento: auth__link-text */
 .auth__link-text {
   text-align: center;
   margin-top: 20px;
@@ -119,7 +110,6 @@
   color: #666;
 }
 
-/* Elemento: auth__link */
 .auth__link {
   color: #667eea;
   text-decoration: none;
@@ -132,7 +122,6 @@
   text-decoration: underline;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   .auth__container {
     padding: 30px 20px;

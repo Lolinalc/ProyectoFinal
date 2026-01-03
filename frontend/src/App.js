@@ -1,13 +1,14 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { AuthProvider } from './contexts/AuthContext';
-import ProtectedRoute from './components/ProtectedRoute';
-import Header from './components/Header/Header';
-import Home from './components/Home/Home';
-import Signup from './components/Auth/Signup';
-import Signin from './components/Auth/Signin';
-import Favorites from './components/Favorites/Favorites';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./contexts/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Header from "./components/Header/Header";
+import Home from "./components/Home/Home";
+import Signup from "./components/Auth/Signup";
+import Signin from "./components/Auth/Signin";
+import CatFacts from "./components/CatFacts/CatFacts";
+import Favorites from "./components/Favorites/Favorites";
+import "./App.css";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/signin" element={<Signin />} />
+              <Route path="/cat-facts" element={<CatFacts />} />
               <Route
                 path="/favorites"
                 element={

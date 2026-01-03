@@ -1,12 +1,9 @@
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
-// Generar un token JWT para un usuario
 const generateToken = (userId) => {
-  return jwt.sign(
-    { id: userId }, // Payload: información que queremos guardar
-    process.env.JWT_SECRET, // Clave secreta
-    { expiresIn: process.env.JWT_EXPIRES_IN } // Tiempo de expiración
-  );
+  return jwt.sign({ id: userId }, process.env.JWT_SECRET, {
+    expiresIn: process.env.JWT_EXPIRES_IN,
+  });
 };
 
 // Verificar si un token es válido
@@ -20,5 +17,5 @@ const verifyToken = (token) => {
 
 module.exports = {
   generateToken,
-  verifyToken
+  verifyToken,
 };

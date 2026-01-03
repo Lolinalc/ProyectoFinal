@@ -1,44 +1,37 @@
-/* Componente Home - Metodología BEM */
-
-/* Bloque: home */
 .home {
   min-height: calc(100vh - 80px);
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 40px 20px;
 }
 
-/* Elemento: home__container */
 .home__container {
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* Elemento: home__hero */
 .home__hero {
   text-align: center;
   color: white;
 }
 
-/* Elemento: home__title */
 .home__title {
-  font-size: 48px;
+  font-size: 60px;
   font-weight: 800;
   margin: 0 0 20px 0;
   line-height: 1.2;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Elemento: home__subtitle */
 .home__subtitle {
-  font-size: 20px;
+  font-size: 22px;
   margin: 0 0 60px 0;
   opacity: 0.95;
   font-weight: 300;
 }
 
-/* Elemento: home__features */
 .home__features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -46,44 +39,41 @@
   margin-bottom: 50px;
 }
 
-/* Elemento: home__feature */
 .home__feature {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   padding: 30px;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
   transition: all 0.3s ease;
 }
 
 .home__feature:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Elemento: home__feature-icon */
 .home__feature-icon {
-  font-size: 48px;
+  font-size: 56px;
   display: block;
   margin-bottom: 15px;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
 }
 
-/* Elemento: home__feature-title */
 .home__feature-title {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   margin: 0 0 10px 0;
 }
 
-/* Elemento: home__feature-text */
 .home__feature-text {
-  font-size: 15px;
+  font-size: 16px;
   margin: 0;
   opacity: 0.9;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-/* Elemento: home__cta */
 .home__cta {
   display: flex;
   gap: 20px;
@@ -91,30 +81,28 @@
   flex-wrap: wrap;
 }
 
-/* Elemento: home__button */
 .home__button {
-  padding: 16px 32px;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: 600;
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 700;
   text-decoration: none;
   transition: all 0.3s ease;
   display: inline-block;
-  border: 2px solid transparent;
+  border: 3px solid transparent;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Modificador: home__button--primary */
 .home__button--primary {
   background-color: white;
-  color: #667eea;
+  color: #f5576c;
 }
 
 .home__button--primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* Modificador: home__button--secondary */
 .home__button--secondary {
   background-color: transparent;
   color: white;
@@ -122,14 +110,13 @@
 }
 
 .home__button--secondary:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-3px);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .home__title {
-    font-size: 36px;
+    font-size: 42px;
   }
 
   .home__subtitle {
@@ -154,7 +141,7 @@
 
 @media (max-width: 480px) {
   .home__title {
-    font-size: 28px;
+    font-size: 32px;
   }
 
   .home__subtitle {

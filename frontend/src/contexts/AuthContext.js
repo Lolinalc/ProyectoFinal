@@ -1,25 +1,21 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
-import authService from '../services/auth.service';
+import React, { createContext, useState, useContext, useEffect } from "react";
+import authService from "../services/auth.service";
 
-// Crear el contexto
 const AuthContext = createContext();
 
-// Hook personalizado para usar el contexto
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {
-    throw new Error('useAuth debe ser usado dentro de AuthProvider');
+    throw new Error("useAuth debe ser usado dentro de AuthProvider");
   }
   return context;
 };
 
-// Proveedor del contexto
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // Verificar autenticación al cargar la aplicación
   useEffect(() => {
     const checkAuth = async () => {
       try {
@@ -29,7 +25,7 @@ export const AuthProvider = ({ children }) => {
           setIsAuthenticated(true);
         }
       } catch (error) {
-        console.error('Error al verificar autenticación:', error);
+        console.error("Error al verificar autenticación:", error);
         authService.logout();
         setCurrentUser(null);
         setIsAuthenticated(false);
@@ -41,18 +37,15 @@ export const AuthProvider = ({ children }) => {
     checkAuth();
   }, []);
 
-  // Función para registrarse
   const signup = async (name, email, password) => {
     try {
       await authService.signup(name, email, password);
-      // Después de registrarse, hacer login automáticamente
       return await signin(email, password);
     } catch (error) {
       throw error;
     }
   };
 
-  // Función para iniciar sesión
   const signin = async (email, password) => {
     try {
       await authService.signin(email, password);
@@ -65,7 +58,6 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // Función para cerrar sesión
   const logout = () => {
     authService.logout();
     setCurrentUser(null);

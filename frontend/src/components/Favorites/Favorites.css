@@ -1,85 +1,96 @@
-/* Componente Favorites - Metodología BEM */
-
-/* Bloque: favorites */
 .favorites {
   min-height: calc(100vh - 80px);
-  background-color: #f5f5f5;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
   padding: 40px 20px;
 }
 
-/* Elemento: favorites__container */
 .favorites__container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Elemento: favorites__title */
 .favorites__title {
-  font-size: 32px;
-  font-weight: 700;
-  color: #333;
+  font-size: 42px;
+  font-weight: 800;
+  color: white;
   margin: 0 0 40px 0;
   text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Elemento: favorites__loading */
 .favorites__loading {
   text-align: center;
   padding: 60px 20px;
-  font-size: 18px;
-  color: #666;
+  font-size: 24px;
+  color: white;
+  font-weight: 600;
 }
 
-/* Elemento: favorites__error */
 .favorites__error {
-  background-color: #fee;
+  background-color: rgba(255, 255, 255, 0.95);
   color: #c33;
   padding: 16px 20px;
-  border-radius: 8px;
+  border-radius: 12px;
   text-align: center;
   margin: 20px 0;
-  border: 1px solid #fcc;
+  border: 2px solid #fcc;
+  font-weight: 600;
 }
 
-/* Elemento: favorites__empty */
 .favorites__empty {
   text-align: center;
   padding: 80px 20px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
 }
 
-/* Elemento: favorites__empty-text */
+.favorites__empty-icon {
+  font-size: 80px;
+  display: block;
+  margin-bottom: 20px;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
 .favorites__empty-text {
-  font-size: 20px;
-  color: #333;
+  font-size: 24px;
   margin: 0 0 10px 0;
   font-weight: 600;
 }
 
-/* Elemento: favorites__empty-hint */
 .favorites__empty-hint {
-  font-size: 16px;
-  color: #666;
+  font-size: 18px;
   margin: 0;
+  opacity: 0.9;
 }
 
-/* Elemento: favorites__grid */
 .favorites__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 24px;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .favorites__title {
-    font-size: 26px;
+    font-size: 32px;
     margin-bottom: 30px;
   }
 
   .favorites__grid {
     grid-template-columns: 1fr;
+  }
+
+  .favorites__empty-icon {
+    font-size: 60px;
+  }
+
+  .favorites__empty-text {
+    font-size: 20px;
+  }
+
+  .favorites__empty-hint {
+    font-size: 16px;
   }
 }
