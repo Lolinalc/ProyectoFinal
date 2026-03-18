@@ -3,7 +3,7 @@
 Proyecto final del curso de **Web Developer**. Cat Facts es una aplicación web interactiva que consume APIs externas para mostrar datos curiosos y aleatorios sobre gatos, con un sistema de autenticación completo y una interfaz moderna y responsive.
 ![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
-![React Router](https://img.shields.io/badge/React_Router_DOM-7-CA4245?logo=reactrouter&logoColor=white)
+![React Router](https://img.shields.io/badge/React_Router_DOM-CA4245?logo=reactrouter&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)
 
 ---
